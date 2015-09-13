@@ -1,0 +1,19 @@
+
+
+# Project files
+Bitvoting/Bitvoting.pro.user*
+BitvotingKeyGen/BitvotingKeyGen.pro.user*
+*.autosave
+
+# Build directory
+build-*
+
+# TeX
+*.aux
+*.dvi
+*.log
+*.out
+*.synctex.gz
+
+
+
