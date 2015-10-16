@@ -64,10 +64,14 @@ void Miner::onNewBlockFromNetwork(Block *b)
     // -> remove all transactions from current transactions set,
     // which are contained in transactions set of the new block
     // temp = transactions - b->transactions
-    std::set<Transaction*> temp;
+    std::set<Transaction*, pt_cmp> temp;
     std::set_difference(transactions.begin(), transactions.end(),
                         b->transactions.begin(), b->transactions.end(),
-                        std::inserter(temp, temp.end()));
+                        std::inserter(temp, temp.end()),
+                        pt_cmp());
+
+    Log::i("Difference is %d", temp.size());
+
     // these are the transactions the miner can be restarted with
     BOOST_FOREACH(Transaction *trans, temp)
     {

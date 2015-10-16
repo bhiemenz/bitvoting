@@ -52,7 +52,7 @@ namespace Settings
     const int MINING_MIN_TRANSACTIONS = 1;
 
     // leading zero bits for hash-target (difficulty for proof-of-work)
-    const int MINING_LEADING_ZEROS = 13;
+    const int MINING_LEADING_ZEROS = 17;
 
     // number of nonces consumed at once by a miner-thread
     const int MINING_NONCES_AT_ONCE = 1000;
